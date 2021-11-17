@@ -38,7 +38,28 @@ const MyFirstApiContorller = async(req,res) =>{
     }
 
 }
-module.exports = { MyFirstApiContorller  };
+
+const UpdateUser = async (req,res) => {
+    try {
+        const _GetUserId = req.params._UserId;
+        const _UpdateUser = await _TestingAndLearningCollection.updateOne(
+            {_id:_GetUserId},
+            req.body
+            )
+            res.json({
+                Message:'Update Successfully',
+                Data:true,
+                Result:_UpdateUser
+            })
+    } catch (error) {
+        res.json({
+            Message:error.message,
+            Data:false,
+            Result:null
+        })
+    }
+}
+module.exports = { MyFirstApiContorller, UpdateUser };
 
 
 
