@@ -17,13 +17,16 @@
 //Exporting The Schema
 // module.exports = mongoose.model('PackageCollection', PackageSchema);
 
-const mongoose = require ('mongoose');
+const mongoose = require('mongoose');
 
 const _TestingAndLearningSchema = mongoose.Schema({
-    Name:{ type:String},
-    MobileNumber:{ type:Number },
-    Address:{ type:String}
+    Name: { type: String, required: true },
+    MobileNumber: { type: Number },
+    Address: { type: String },
+    ImageUrl: { type: String },
+    ImageName: { type: String },
+    ImageMimeType: { type: String }
 })
 
-module.exports = mongoose.model('TestingCollection',_TestingAndLearningSchema);
+module.exports = mongoose.model('TestingCollection', _TestingAndLearningSchema);
 //Start Block For Modeling my Data and creating Schemas in DataBase
