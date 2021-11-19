@@ -19,9 +19,9 @@ const MyFirstApiContorller = async (req, res) => {
             Name: req.body.Name,
             MobileNumber: req.body.MobileNumber,
             Address: req.body.Address,
-            ImageUrl: req.file.filename,
+            ImageUrl: `/assets/${req.body.Name}/${req.file.filename}`,
             ImageName: req.file.originalname,
-            ImageMimeType: req.file.mimetype,
+            ImageMimeType: req.file.mimetype
         });
 
         const _Result = await _TestingVariableToStoreInDataBase.save();

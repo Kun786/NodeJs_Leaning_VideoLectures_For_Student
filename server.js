@@ -17,6 +17,10 @@ app.use(express.text());
 app.use(cors());
 //Block End Initialize the APP
 
+//Making My Folder Public Using Static function
+app.use('/assets',express.static('assets'));
+//Making My Folder Public Using Static function
+
 //Start Blcok Setting the Headers for you Application
 app.all('*', (req, res, next) => {
 
